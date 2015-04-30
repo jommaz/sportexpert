@@ -1,10 +1,64 @@
 <html>
-<head>
-	<title>Sport Expert</title>
-</head>
-<body>
-	<div class = 'nav'>
-	</div>
+	<head>
+		<title>Sport Expert</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src = "/mainjs.js"></script>
+		<meta charset="UTF-8"/>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+
+				<div class = 'nav-main'>
+
+				</div>
+				<div class = 'nav-section'>
+				</div>
+				
+			</nav>
+		</header>
+
+		<div class="container"></div>
+
+				<div class = 'sign'>
+
+					<% if current_user %>
+					<span> Hello <%= current_user.username %></span>
+					<a href="/logout"> Logout</a> 
+					<% else %>
+					<a href='/login'> Login</a>
+					<a href='/'> Sign-up</a>
+					<% end %>	
+				</div>
+
+				<% if flash[:notice] %>
+				<div class="notice">
+				<%= flash[:notice] %>
+				</div>
+				<% end %>
+				<% if flash[:alert] %>
+				<div class="alert">
+				<%= flash[:alert] %>
+				</div>
+				<% end %>
 	<%= yield %>
+
+	<footer>
+			<div class = 'foot-main'>
+
+				</div>
+				<div class = 'foot-section'>
+				</div>
+				 <!-- wrapper ends-->
+				<div class="icons">
+			           	<a href="https://twitter.com/" target="_blank"><img src="https://www.nasa.gov/sites/default/files/images/twitter-icon.png" width="48" height="48" alt="Twitter" /></a>
+						<a href="https://linkedin.com/" target="_blank"><img src="http://icons.iconarchive.com/icons/sicons/flat-shadow-social/128/linkedin-icon.png" width="48" height="48" alt="LinkedIn" /></a>
+						<a href="http://www.facebook.com" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" width="48" height="48" alt="Facebook" /></a>
+				</div> <!-- end icons div -->	
+	   		</div>
+		</footer>
+
 </body>
 </html>
