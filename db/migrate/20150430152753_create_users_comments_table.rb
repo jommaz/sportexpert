@@ -6,5 +6,7 @@ class CreateUsersCommentsTable < ActiveRecord::Migration
   	end
   	add_index :userscomments, :users_id
   	add_index :userscomments, :comments_id
+  
   end
+  drop_table :userscomments 
 end
