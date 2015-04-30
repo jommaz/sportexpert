@@ -11,27 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430152753) do
+ActiveRecord::Schema.define(version: 20150430183831) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment"
     t.integer  "credible"
     t.datetime "timestamp"
+    t.integer  "user_id"
+    t.integer  "post_id"
   end
-
-  create_table "postcomment", id: false, force: :cascade do |t|
-    t.integer "posts_id"
-    t.integer "comments_id"
-  end
-
-  add_index "postcomment", ["comments_id"], name: "index_postcomment_on_comments_id"
-  add_index "postcomment", ["posts_id"], name: "index_postcomment_on_posts_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "post"
     t.datetime "timestamp"
     t.string   "comments"
     t.integer  "credible"
+    t.integer  "user_id"
   end
 
   create_table "profile", force: :cascade do |t|
@@ -42,28 +37,13 @@ ActiveRecord::Schema.define(version: 20150430152753) do
     t.integer "followers"
     t.integer "followed"
     t.string  "location"
+    t.integer "user_id"
   end
-
-  create_table "userpost", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "posts_id"
-  end
-
-  add_index "userpost", ["posts_id"], name: "index_userpost_on_posts_id"
-  add_index "userpost", ["users_id"], name: "index_userpost_on_users_id"
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password"
   end
-
-  create_table "userscomments", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "comments_id"
-  end
-
-  add_index "userscomments", ["comments_id"], name: "index_userscomments_on_comments_id"
-  add_index "userscomments", ["users_id"], name: "index_userscomments_on_users_id"
 
 end
