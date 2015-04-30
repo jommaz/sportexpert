@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Slabo 27px";
+    src: url('Slabo27px.ttf');
+}
+
+html,body{
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+body{
+	font-family: "Slabo 27px";
+	font-style: normal;
+	font-weight: 400;
+}
+
+.nav-main{
+	background-color:#FF5722;
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	font-size: 18px;
+	z-index: 0;
+}
+
+.nav-section{
+	background-color: rgb(66,133,244);
+	display: inline-block;
+	position: absolute;
+	width: 33%;
+	height: 60px;
+	z-index: 1;
+/*	float: right;
+*/}
+
+.sign{
+	display: block;
+	margin-top: 10px; 
+	background-color: red;
+}
+
+.foot-main{
+	background-color: rgb(66,133,244);
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	font-size: 18px;
+	z-index: 0;
+}
+
+.foot-section{
+	background-color:#FF5722;
+	display: inline-block;
+	position: absolute;
+	width: 33%;
+	height: 60px;
+	z-index: 1;
+/*	float: right;
+*/}
+
+.container{
+ height:50px;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;}
+
+a:visited {
+	text-decoration: none;
+	color: #fff;
+}
