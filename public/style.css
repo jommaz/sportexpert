@@ -21,7 +21,6 @@ body{
 	height: 60px;
 	width: 100%;
 	font-size: 18px;
-	z-index: 0;
 }
 
 .nav-section{
@@ -30,23 +29,37 @@ body{
 	position: absolute;
 	width: 33%;
 	height: 60px;
-	z-index: 1;
-/*	float: right;
-*/}
+}
 
 .sign{
 	display: block;
 	margin-top: 10px; 
-	background-color: red;
+	background-color: rgb(66,133,244);
+	z-index: 1;
+	position: absolute;
 }
 
-.foot-main{
+.signupbox{
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.video{
+	border-style: solid;
+	height: 250px;
+	width: 400px;
+	display: inline-block;
+	float: right;
+	margin-right: 100px;
+	margin-bottom: 100px;
+}
+
+/*.foot-main{
 	background-color: rgb(66,133,244);
 	position: absolute;
 	height: 60px;
 	width: 100%;
 	font-size: 18px;
-	z-index: 0;
 }
 
 .foot-section{
@@ -55,9 +68,7 @@ body{
 	position: absolute;
 	width: 33%;
 	height: 60px;
-	z-index: 1;
-/*	float: right;
-*/}
+}*/
 
 .container{
  height:50px;
