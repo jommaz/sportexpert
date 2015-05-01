@@ -1,0 +1,24 @@
+<h1> <%= current_user %></h1>
+
+<form action='/profile' method='POST'>
+
+<label type='file' for='avatar'> Your Picture</label> <br>
+<input type='file' name='avatar' placeholder='Upload a profile picture'>
+<br>
+<label type='text' for='bio'> Bio </label>
+<input type='text' name='bio' placeholder='Tell us about your passion!'>
+<br>
+<label type='text' for='favourite'> Favourite Team</label>
+<input type='text' name='favourite' placeholder='Who do you support?'>
+<br>
+<label type='text' for='location'> Location </label>
+<input type='text' name='location' placeholder='Where are you?'>
+<br>
+<label type='boolean' name='expert'>Expert</label>
+<br>
+
+<input type='button' value='Edit'>
+<input type='submit' value='Save'>
+
+
+</form>

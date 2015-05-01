@@ -11,14 +11,30 @@
 		<header>
 			<nav>
 
+
 				<div class = 'nav-main'>
 					<h1>sport.Expert*</h1>
+
+				<!-- <div class = 'nav-main'> -->
+					
+
+					<div class = 'sign'>
+						<% if current_user %>
+						<span> Hello <%= current_user.username %></span>
+						<a href="/logout"> Logout</a> 
+						<% else %>
+						<a href='/login'> Login</a>
+						<a href='/'> Sign-up</a>
+						<% end %>	
+					</div>
+
 				</div>
-				<div class = 'nav-section'>
+				<!-- <div class = 'nav-section'> -->
 				</div>
 				
 			</nav>
 		</header>
+
 				<div class = 'sign'>
 
 					<% if current_user %>
@@ -29,6 +45,11 @@
 					<a href='/'> Sign-up</a>
 					<% end %>	
 				</div>
+
+
+		<div class="container"></div>
+				
+
 
 <div class ="right gutter">
 </div>
