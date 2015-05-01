@@ -2,6 +2,13 @@
     font-family: "Slabo 27px";
     src: url('Slabo27px.ttf');
 }
+.container{
+	margin: 0, auto;
+	width: 70%;
+	height:600px;
+	display:inline-block;
+
+}
 
 html,body{
 	margin: 0;
@@ -12,62 +19,108 @@ html,body{
 body{
 	font-family: "Slabo 27px";
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 100;
 }
-
+nav h1{
+	margin:0, auto;
+	padding-left:20px;
+	color:white;
+}
 .nav-main{
-	background-color:#FF5722;
-	position: absolute;
+	background-color:#52B3D9;
 	height: 60px;
 	width: 100%;
 	font-size: 18px;
 	z-index: 0;
+	position:fixed;
 }
 
 .nav-section{
-	background-color: rgb(66,133,244);
-	display: inline-block;
-	position: absolute;
-	width: 33%;
-	height: 60px;
+	background-color: rgba(231, 76, 60, .8);
+	width: 100%;
 	z-index: 1;
 /*	float: right;
 */}
 
 .sign{
-	display: block;
-	margin-top: 10px; 
-	background-color: red;
+	width:100%; 
+	background-color: rgba(231, 76, 60, .8);
+	position:relative;
+	z-index: 100;
+	box-shadow: 1px 1px 5px #888888;
 }
 
-.foot-main{
-	background-color: rgb(66,133,244);
-	position: absolute;
-	height: 60px;
+/*.foot-main{
+	background-color: rgba(231, 76, 60, .8);
+	
+	height: 20px;
 	width: 100%;
 	font-size: 18px;
 	z-index: 0;
 }
 
 .foot-section{
-	background-color:#FF5722;
-	display: inline-block;
-	position: absolute;
-	width: 33%;
-	height: 60px;
+	background-color:#52B3D9;
+
+	
+	width: 100%;
+	height: 20px;
 	z-index: 1;
-/*	float: right;
-*/}
+	float: right;
+}*/
 
-.container{
- height:50px;
+iframe{
+	float:right;
+	padding-right:50px;
+	padding-top:75px;
 }
+.signup{
+	padding-left:50px;
+	padding-top:10px;
+	position:fixed;
+}
+.signin{
+	padding-left:50px;
+	padding-top:10px;
+	position:fixed;
+}
+.gutter{
+	height:100%;
+	width:15%;
+	background-color: rgba(0, 0, 0, .1);
+}
+.left{
+	float:left;
+	clear:left;
 
+}
+.right{
+	float:right;
+	clear:left;
+	z-index: 100;		
+}
 a{
 	text-decoration: none;
-	color: #fff;}
+	color: #fff;
+	padding-left:10px;
+}
 
 a:visited {
 	text-decoration: none;
 	color: #fff;
+}
+p{
+	color:black;
+	z-index:100;
+	padding-top:25px;
+	font-size: 24px;
+}
+.feed{
+	float: right;
+	clear: right;
+	padding-top: 75px;
+	padding-right:25px;
+}
+.pbutton{
+	float:right;
 }

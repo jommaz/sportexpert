@@ -1,13 +1,24 @@
-<h1> Please sign-in </h1>
+<div class="feed">
+		<form action='/signin' method='POST' class='newpost'>
+			<textarea type='text' maxlength='151' placeholder='Tell everyone why you are an expert.' rows='3' cols='80'></textarea>
+			<br>
+			<input type='submit' value='Post' class='pbutton'>
+		</form>
+		
+	</div>
 
-<form action='/signin' method='POST'>
 
+
+<form action='/signin' method='POST' class='signin'>
+	<p> &nbsp; &nbsp; &nbsp; Please sign-in </p>
 	<label type="text" for="username"> Username </label>
+	<br>
 	<input type="text" name="username" placeholder="What people call you" required>
-
+	<br><br>
 	<label type="text" for="password"> Password </label>
+	<br>
 	<input type="password" name="password" placeholder="The secret word..." required>
-
+	<br><br>
 	<input type="submit" value="Submit">
 
 </form>

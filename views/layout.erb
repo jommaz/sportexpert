@@ -12,26 +12,31 @@
 			<nav>
 
 				<div class = 'nav-main'>
-
+					<h1>sport.Expert*</h1>
 				</div>
 				<div class = 'nav-section'>
 				</div>
 				
 			</nav>
 		</header>
-
-		<div class="container"></div>
-
 				<div class = 'sign'>
 
 					<% if current_user %>
-					<span> Hello <%= current_user.username %></span>
+					
 					<a href="/logout"> Logout</a> 
 					<% else %>
 					<a href='/login'> Login</a>
 					<a href='/'> Sign-up</a>
 					<% end %>	
 				</div>
+
+<div class ="right gutter">
+</div>
+
+<div class="left gutter">
+</div>
+<div class="container">
+
 
 				<% if flash[:notice] %>
 				<div class="notice">
@@ -44,21 +49,21 @@
 				</div>
 				<% end %>
 	<%= yield %>
-
-	<footer>
+</div>
+	<!--<footer>
 			<div class = 'foot-main'>
 
 				</div>
 				<div class = 'foot-section'>
 				</div>
-				 <!-- wrapper ends-->
-				<div class="icons">
+				 <!- wrapper ends-->
+				<!-- <div class="icons">
 			           	<a href="https://twitter.com/" target="_blank"><img src="https://www.nasa.gov/sites/default/files/images/twitter-icon.png" width="48" height="48" alt="Twitter" /></a>
 						<a href="https://linkedin.com/" target="_blank"><img src="http://icons.iconarchive.com/icons/sicons/flat-shadow-social/128/linkedin-icon.png" width="48" height="48" alt="LinkedIn" /></a>
-						<a href="http://www.facebook.com" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" width="48" height="48" alt="Facebook" /></a>
-				</div> <!-- end icons div -->	
-	   		</div>
-		</footer>
+						<a href="http://www.facebook.com" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" width="48" height="48" alt="Facebook" /></a> -->
+				<!-- </div> --> <!-- end icons div -->	
+	   		<!-- </div>
+		</footer> -->
 
 </body>
 </html>
