@@ -47,8 +47,8 @@ post '/signin' do
 end
 
 get '/homefeed' do
-	my_user = User.find_by(id: session[:user_id])
-	my_profile = my_user.profile
+	@user = User.find_by(id: session[:user_id])
+	@profile = @user.profile
 	erb :homefeed
 end
 
@@ -64,6 +64,28 @@ end
 
 post '/profile' do
 	@profile = Profile.find_by(user_id: session[:user_id])
-	@profile = Profile.update(:bio=>params[:bio], :favorite=>params[:favorite], location: params[:location])
+	@profile.update bio: params[:bio] 
+	@profile.update favorite: params[:favorite]
+	@profile.update location: params[:location]
 	redirect to('/homefeed')
+end
+
+post '/follow/:id' do
+	@relationship = Relationship.new(follower_id: current_user.id, followed_id: params[:id])
+	if @relationship.save
+		flash[:notice] = 'successfully followed'
+	else
+		flash[:alert] = 'unsuccessfully followed'
+	end
+	redirect to('/homefeed')
+end
+
+get '/users' do
+	@users = User.all
+	erb :index
+end
+
+
+get '/users/:id' do
+	@users = User.find(params[:id])
 end

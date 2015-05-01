@@ -1,7 +1,10 @@
 <h1> Welcome to sportExpert*</h1>
 
 <h2> What are your colours, <%= current_user.username %> ?</h2>
-	
+
+<h1> <%= @profile.bio %></h1>
+<h1> <%= @profile.favorite %></h1>
+<h1> <%= @profile.location %></h1>
 
 <form action='/profile' method='POST'>
 
