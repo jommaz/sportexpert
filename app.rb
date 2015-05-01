@@ -6,7 +6,7 @@ require './models.rb'
 
 enable :sessions
 use Rack::Flash, :sweep => true
-set :sessions => true
+set :sessions, true
 set :database, 'sqlite3:se.sqlite3'
 # Paperclip.options[:command_path] = "/Program\ Files/ImageMagick-6.9.1-Q16/convert/"
 
@@ -22,8 +22,9 @@ end
 get '/' do
 	if session[:user_id] = current_user
 		redirect to('/homefeed')
-	end
+	else
 	erb :home
+	end
 end
 
 post '/signup' do
