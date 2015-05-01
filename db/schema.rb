@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430183831) do
+ActiveRecord::Schema.define(version: 20150501154640) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150430183831) do
     t.integer  "user_id"
   end
 
-  create_table "profile", force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string  "bio"
     t.string  "favorite"
     t.boolean "expert"

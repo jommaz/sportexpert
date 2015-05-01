@@ -11,27 +11,27 @@
 		<header>
 			<nav>
 
-				<div class = 'nav-main'>
+				<!-- <div class = 'nav-main'> -->
+					
 
+					<div class = 'sign'>
+						<% if current_user %>
+						<span> Hello <%= current_user.username %></span>
+						<a href="/logout"> Logout</a> 
+						<% else %>
+						<a href='/login'> Login</a>
+						<a href='/'> Sign-up</a>
+						<% end %>	
+					</div>
 				</div>
-				<div class = 'nav-section'>
+				<!-- <div class = 'nav-section'> -->
 				</div>
 				
 			</nav>
 		</header>
 
 		<div class="container"></div>
-
-				<div class = 'sign'>
-
-					<% if current_user %>
-					<span> Hello <%= current_user.username %></span>
-					<a href="/logout"> Logout</a> 
-					<% else %>
-					<a href='/login'> Login</a>
-					<a href='/'> Sign-up</a>
-					<% end %>	
-				</div>
+				
 
 				<% if flash[:notice] %>
 				<div class="notice">
