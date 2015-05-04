@@ -3,12 +3,13 @@ require 'bundler/setup'
 require 'sinatra/activerecord'
 require 'rack-flash'
 require './models.rb'
+require 'carrierwave'
 
 enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions, true
 set :database, 'sqlite3:se.sqlite3'
-# Paperclip.options[:command_path] = "/Program\ Files/ImageMagick-6.9.1-Q16/convert/"
+# Paperclip.options[:command_path] = "/Program Files/ImageMagick-6.9.1-Q16/convert/"
 
 helpers do
   def current_user
@@ -50,7 +51,15 @@ end
 get '/homefeed' do
 	@user = User.find_by(id: session[:user_id])
 	@profile = @user.profile
+	@posts = Post.last
 	erb :homefeed
+end
+
+['/follows', '/followers'].each do |path|
+  get path do
+    @user = User.get(session[:userid])
+    erb :follows
+  end
 end
 
 get '/logout' do
@@ -63,18 +72,31 @@ get '/login' do
 	erb :signinpage
 end
 
+get '/editprofile' do
+	erb :profile
+end
+
+
 post '/profile' do
 	@profile = Profile.find_by(user_id: session[:user_id])
-	@profile.update bio: params[:bio] 
+	@profile.update bio: params[:bio]
 	@profile.update favorite: params[:favorite]
 	@profile.update location: params[:location]
+	redirect to('homefeed')
+end
+
+post '/post' do
+	@post = Post.create(post: params[:post], user_id: current_user.id)
+	flash[:notice]='Expert* opinion posted'
 	redirect to('/homefeed')
 end
 
-post '/follow/:id' do
+get '/follow/:id' do
 	@relationship = Relationship.new(follower_id: current_user.id, followed_id: params[:id])
+	@profile = Profile.find_by(user_id: session[:user_id])
 	if @relationship.save
 		flash[:notice] = 'successfully followed'
+		@profile.increase_follower
 	else
 		flash[:alert] = 'unsuccessfully followed'
 	end
@@ -86,6 +108,9 @@ get '/users' do
 	erb :index
 end
 
+get '/other_user' do
+	@user = User.find(params[:id])
+end
 
 get '/users/:id' do
 	@users = User.find(params[:id])

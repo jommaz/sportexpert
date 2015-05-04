@@ -1,0 +1,9 @@
+<ul>
+
+<% current_user.following.each do |user| %>
+
+	<li><%= user.name %></li>
+
+<% end %>
+
+</ul>

@@ -1,4 +1,4 @@
-<h1> <%= current_user %></h1>
+<h1> <%= current_user.username %></h1>
 
 <form action='/profile' method='POST'>
 
@@ -8,8 +8,8 @@
 <label type='text' for='bio'> Bio </label>
 <input type='text' name='bio' placeholder='Tell us about your passion!'>
 <br>
-<label type='text' for='favourite'> Favourite Team</label>
-<input type='text' name='favourite' placeholder='Who do you support?'>
+<label type='text' for='favorite'> Favourite Team</label>
+<input type='text' name='favorite' placeholder='Who do you support?'>
 <br>
 <label type='text' for='location'> Location </label>
 <input type='text' name='location' placeholder='Where are you?'>
@@ -17,7 +17,6 @@
 <label type='boolean' name='expert'>Expert</label>
 <br>
 
-<input type='button' value='Edit'>
 <input type='submit' value='Save'>
 
 

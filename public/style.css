@@ -7,7 +7,10 @@
 	width: 70%;
 	height:600px;
 	display:inline-block;
+}
 
+a .edit{
+	color:#fff;
 }
 
 html,body{

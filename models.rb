@@ -8,8 +8,13 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :passive_relationships, source: :follower
 end
 
+
 class Profile < ActiveRecord::Base
+	
 	belongs_to :user
+	def increase_follower
+ 	 update_attributes(:followers => followers + 1)
+	end	
 end
 
 class Post < ActiveRecord::Base
