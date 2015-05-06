@@ -11,8 +11,11 @@
 <h1> You have <%= @profile.followers %> followers.</h1>
 <h1><a class='edit' href="/editprofile"> Edit your Profile</a> </h1>
 
-<h1> <%= @posts.post %> </h1>
-
+<ul>
+	<% @user.posts.each do |p| %>
+		<li><%= p.post %></li>
+	<% end %>
+</ul>
 
 <div class="feed">
 		<form action='/post' method='POST' class='newpost'>

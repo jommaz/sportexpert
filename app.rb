@@ -51,7 +51,6 @@ end
 get '/homefeed' do
 	@user = User.find_by(id: session[:user_id])
 	@profile = @user.profile
-	@posts = Post.last
 	erb :homefeed
 end
 
